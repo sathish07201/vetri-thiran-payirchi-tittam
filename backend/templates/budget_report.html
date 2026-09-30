@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketSmart AI - {{ plan_type }} Budget Report</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #0f172a; margin: 0; padding: 40px 20px; }
+        .card { max-width: 800px; margin: 0 auto; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 32px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .badge { background: #0f172a; color: #fbbf24; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; }
+        .header { border-b: 1px solid #e2e8f0; padding-bottom: 20px; margin-bottom: 24px; }
+        .meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+        .meta-box { background: #f1f5f9; padding: 16px; border-radius: 8px; }
+        .meta-box p { margin: 0; font-size: 12px; color: #64748b; }
+        .meta-box h4 { margin: 4px 0 0 0; font-size: 18px; color: #0f172a; }
+        .platforms { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+        .platform-tag { background: #e0f2fe; color: #0369a1; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 6px; }
+        .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #94a3b8; display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <span class="badge">Jinja2 Generated Report</span>
+            <h1 style="margin: 8px 0 4px 0; font-size: 24px;">PocketSmart AI: {{ plan_type }} Budget Summary</h1>
+            <p style="margin: 0; font-size: 14px; color: #64748b;">GenAI-powered Cross-Platform Recommendation & Allocation Engine</p>
+        </div>
+
+        <div class="meta-grid">
+            <div class="meta-box">
+                <p>Allocated Budget</p>
+                <h4>₹{{ "{:,.0f}".format(budget) }}</h4>
+            </div>
+            <div class="meta-box">
+                <p>Team Lead</p>
+                <h4>{{ team_lead }}</h4>
+            </div>
+            <div class="meta-box">
+                <p>Team Member</p>
+                <h4>{{ team_member }}</h4>
+            </div>
+        </div>
+
+        <h3>Bridged E-Commerce Ecosystems</h3>
+        <div class="platforms">
+            {% for platform in platforms %}
+            <span class="platform-tag">{{ platform }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="footer">
+            <span>Evaluation Mentor: {{ mentor_status }}</span>
+            <span>Generated via FastAPI & Jinja2 Template Bridge</span>
+        </div>
+    </div>
+</body>
+</html>
